@@ -1,9 +1,0 @@
-<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
-    <!-- Text "Film Library" -->
-    <text x="0" y="40" font-family="Arial, sans-serif" font-size="36px" fill="#FF0000">Film Library</text>
-
-    <!-- Film reel icon -->
-    <circle cx="150" cy="30" r="25" fill="#FF0000" />
-    <rect x="135" y="15" width="30" height="30" fill="white" />
-    <circle cx="150" cy="30" r="10" fill="white" />
-</svg>

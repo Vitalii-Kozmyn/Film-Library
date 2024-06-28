@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__container">
+            <nav class="header__nav">
+                <a href="/">
+                    <img src="/images/logo.png" alt="Logo">
+                </a>
+                <ul class="header__menu">
+                    <li class="menu-item">Home</li>
+                    <li class="menu-item">Movie Catalog</li>
+                    <li class="menu-item">Watchlist</li>
+                </ul>
+            </nav>
+            <button class="header__bth-login" type="button">Log in</button>
+        </div>
+    </div>
+</header>
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-section__container">
+            <h1 class="title">Recommendations</h1>
+            <div class="hero-section__container-content">
+                <div id="movie1" class="active movie">
+                    <div class="movie-content">
+                        <h2>Doctor Strange in the Multiverse of Madness</h2>
+                        <div class="movie-content__info">
+                            <p>06.05.2022</p>
+                            <p><span>IMDb:</span> 6.9</p>
+                            <p>2h 6m</p>
+                        </div>
+                        <p>Doctor Strange teams up with a mysterious teenage girl who can travel across
+                            multiverses, to battle other-universe versions of himself which threaten to
+                            wipe out the multiverse. They seek help from the Scarlet Witch, Wong and others.</p>
+                        <button type="button" class="btn-play">Play</button>
+                    </div>
+                </div>
+                <div id="movie2" class="movie">
+                    <div class="movie-content">
+                        <h2>Dune: Part Two</h2>
+                        <div class="movie-content__info">
+                            <p>28.02.2024</p>
+                            <p><span>IMDb:</span> 8.6</p>
+                            <p>2h 46m</p>
+                        </div>
+                        <p>Paul Atreides unites with Chani and the Fremen while seeking revenge
+                            against the conspirators who destroyed his family.</p>
+                        <button type="button" class="btn-play">Play</button>
+                    </div>
+                </div>
+                <div id="movie3" class="movie">
+                    <div class="movie-content">
+                        <h2>Godzilla x Kong : The New Empire</h2>
+                        <div class="movie-content__info">
+                            <p>28.03.2024</p>
+                            <p><span>IMDb:</span> 6.2</p>
+                            <p>1h 55m</p>
+                        </div>
+                        <p>Two ancient titans, Godzilla and Kong, clash in an epic battle as humans unravel
+                            their intertwined origins and connection to Skull Island's mysteries.</p>
+                        <button type="button" class="btn-play">Play</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="list-section">
+    <div class="container">
+        <div class="list-section__container">
+            <ul class="movie-list">
+                <li th:each="el : ${Movies}">
+                    <img th:src="@{'/images/' + ${el.poster_path}}" alt="Poster" />
+                    <h3 th:text="${el.name}" class="movie__name"/>
+                    <p th:text="${el.release_date}" class="movie__date"/>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>
